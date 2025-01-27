@@ -6,7 +6,10 @@ package businessLogic;
 import instances.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,6 +51,15 @@ public class BaseClass {
         properties=new Properties();
         properties.load(file);
         return properties;
+    }
+
+    public static void movetoElement(WebElement element) {
+
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+        Actions actions = new Actions(Driver.getInstance());
+        actions.moveToElement(element).click().perform();
+
     }
 
 
