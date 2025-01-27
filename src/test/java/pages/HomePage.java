@@ -30,26 +30,31 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='post-36']/div/div[2]/div/div[1]/div[7]/div/a")
     public WebElement accordionLink;
 
-    @FindBy(xpath = "//*[@id='post-36']/div/div[2]/div/div[2]/div[1]/div/a")
+    @FindBy(xpath = "")
     public WebElement formFieldsLink;
 
     public void openModalsPage() {
         BaseClass.getLogger().info("Scrolling down Page...");
-        BaseClass.movetoElement(modalsLink);
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+        Actions actions = new Actions(Driver.getInstance());
+        actions.moveToElement(modalsLink).click().perform();
         BaseClass.getLogger().info("Modals link found and clicked!");
 
     }
     
     public void openAccordionPage() {
         BaseClass.getLogger().info("Scrolling to bottom of Page...");
-        BaseClass.movetoElement(accordionLink);
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
+        executor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+        Actions actions = new Actions(Driver.getInstance());
+        actions.moveToElement(accordionLink).click().perform();
         BaseClass.getLogger().info("Form Fields link found and clicked!");
     }
 
     public void openFormFieldsPage() throws InterruptedException {
-        //BaseClass.getLogger().info("Scrolling to top of Page...");
+        BaseClass.getLogger().info("Scrolling to top of Page...");
         formFieldsLink.click();
-        BaseClass.getLogger().info("Form Field link found and clicked!");
         Thread.sleep(5000);
     }
 

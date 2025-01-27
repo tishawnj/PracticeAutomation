@@ -55,10 +55,7 @@ public class BaseClass {
 
     public static void movetoElement(WebElement element) {
 
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getInstance();
-        executor.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-        Actions actions = new Actions(Driver.getInstance());
-        actions.moveToElement(element).click().perform();
+
 
     }
 
