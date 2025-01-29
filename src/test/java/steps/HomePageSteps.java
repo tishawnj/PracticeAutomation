@@ -5,6 +5,7 @@ import instances.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.jsoup.Connection;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 
@@ -25,8 +26,7 @@ public class HomePageSteps {
 
     @Given("I am on Home page")
     public void i_am_on_home_page() throws IOException {
-        Driver.getInstance();
-        BaseClass.initializeBrowser(Driver.getInstance());
+        BaseClass.getLogger().info("I am on Home page");
     }
 
     @When("I click Close Button")

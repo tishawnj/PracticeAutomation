@@ -18,7 +18,6 @@ import java.io.IOException;
 public class HomePage {
 
 
-
     public HomePage (){
         PageFactory.initElements(Driver.getInstance(), this);
     }
@@ -30,7 +29,7 @@ public class HomePage {
     @FindBy(xpath = "//*[@id='post-36']/div/div[2]/div/div[1]/div[7]/div/a")
     public WebElement accordionLink;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//*[@id='post-36']/div/div[2]/div/div[2]/div[1]/div/a")
     public WebElement formFieldsLink;
 
     public void openModalsPage() {

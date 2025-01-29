@@ -24,8 +24,8 @@ public class FormFieldsSteps {
 
     }
     @When("I enter what is my favorite {string} color")
-    public void i_enter_what_is_my_favorite_color(String color) {
-
+    public void i_enter_what_is_my_favorite_color(String color) throws InterruptedException {
+        Thread.sleep(6000);
         page.selectFavoriteColor(color);
 
     }

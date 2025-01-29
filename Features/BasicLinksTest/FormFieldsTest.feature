@@ -16,4 +16,5 @@ Feature: Test for Form Fields Modal page
 
     Examples:
       | name     | password | drink | color | response | email                | message                         |
-      | John Doe | john123  | tea   | blue  | yes      | john.doe@example.com | I love learning and automation! |
+      | John Doe | john123  | water | blue  | Yes      | john.doe@example.com | I love learning and automation! |
+     | Jane Doe | jane123  | coffee | red   | No       | jane.doe@example.com | I'm not a big fan of automation.' |

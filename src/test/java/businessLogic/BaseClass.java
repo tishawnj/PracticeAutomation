@@ -22,7 +22,7 @@ public class BaseClass {
      static Properties properties;
 
 
-     public static void initializeBrowser(WebDriver driver) throws IOException {
+     public static void initializeBrowser() throws IOException {
 
          properties = getProperties();
          BaseClass.getLogger().info("Initializing browser and navigating to the application");

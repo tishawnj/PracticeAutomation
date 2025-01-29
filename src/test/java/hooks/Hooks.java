@@ -13,6 +13,14 @@ public class Hooks {
 
 
 
+    @Before
+    //initialize the webdriver and navigate to url
+    public static void before() throws IOException {
+        BaseClass.initializeBrowser();
+        BaseClass.getLogger().info("Navigated to the URL: " + BaseClass.getProperties().getProperty("url"));
+    }
+
+
     @AfterAll
     public static void beforeAll_or_AfterAll(){
         Driver.getInstance().quit();
