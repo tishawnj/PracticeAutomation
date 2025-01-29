@@ -2,8 +2,10 @@ package steps;
 
 import businessLogic.BaseClass;
 import instances.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.jsoup.Connection;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 
@@ -21,10 +23,10 @@ public class HomePageSteps {
         homePage.openModalsPage();
     }
 
+
     @Given("I am on Home page")
-    public void iAmOnHomePage() throws IOException {
-        Driver.getInstance();
-        BaseClass.initializeBrowser(Driver.getInstance());
+    public void i_am_on_home_page() throws IOException {
+        BaseClass.getLogger().info("I am on Home page");
     }
 
     @When("I click Close Button")
@@ -34,5 +36,18 @@ public class HomePageSteps {
         BaseClass.getLogger().info("Closing browser!");
 
         // Write code here that turns the phrase above into concrete actions
+    }
+
+
+
+    @When("I click Accordion Link")
+    public void i_click_accordion_link() {
+        homePage.openAccordionPage();
+    }
+
+    @Given("I click on FormFields Link")
+    public void i_click_on_form_fields_link() throws InterruptedException {
+
+        homePage.openFormFieldsPage();
     }
 }

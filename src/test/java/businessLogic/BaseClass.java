@@ -6,7 +6,10 @@ package businessLogic;
 import instances.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,7 +22,7 @@ public class BaseClass {
      static Properties properties;
 
 
-     public static void initializeBrowser(WebDriver driver) throws IOException {
+     public static void initializeBrowser() throws IOException {
 
          properties = getProperties();
          BaseClass.getLogger().info("Initializing browser and navigating to the application");
@@ -48,6 +51,12 @@ public class BaseClass {
         properties=new Properties();
         properties.load(file);
         return properties;
+    }
+
+    public static void movetoElement(WebElement element) {
+
+
+
     }
 
 
