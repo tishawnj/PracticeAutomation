@@ -2,8 +2,6 @@
   Description: Practice Automation for Validations
 
 
-
-
     Scenario: Validation for Simple Modal Text
     Given I am on Home page
     When I click Modals Link
